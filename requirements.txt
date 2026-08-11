@@ -10,3 +10,9 @@ python-dotenv==1.2.2
 PyYAML==6.0.3
 typing_extensions==4.16.0
 allure-pytest==2.15.0
+loguru
+pydantic
+faker
+requests
+email-validator
+pytest-playwright
