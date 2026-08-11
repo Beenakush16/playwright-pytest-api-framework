@@ -8,50 +8,18 @@ class AllureExecutor:
     @staticmethod
     def write():
 
-        allure_results = Path("allure-results")
-        allure_results.mkdir(exist_ok=True)
+        results_dir = Path("allure-results")
+        results_dir.mkdir(exist_ok=True)
 
         executor = {
-
+            "reportName": "Playwright API Automation Report",
             "name": "Jenkins",
-
             "type": "jenkins",
-
-            "url": os.getenv(
-                "JENKINS_URL",
-                "http://localhost:8080"
-            ),
-
-            "buildName": os.getenv(
-                "JOB_NAME",
-                ""
-            ),
-
-            "buildOrder": int(
-                os.getenv(
-                    "BUILD_NUMBER",
-                    "0"
-                )
-            ),
-
-            "buildUrl": os.getenv(
-                "BUILD_URL",
-                ""
-            ),
-
-            "reportName": (
-                "Playwright API Automation Report"
-            )
+            "url": os.getenv("JENKINS_URL", ""),
+            "buildOrder": int(os.getenv("BUILD_NUMBER", "0")),
+            "buildName": os.getenv("JOB_NAME", ""),
+            "buildUrl": os.getenv("BUILD_URL", "")
         }
 
-        with open(
-            allure_results / "executor.json",
-            "w",
-            encoding="utf-8"
-        ) as file:
-
-            json.dump(
-                executor,
-                file,
-                indent=4
-            )
+        with open(results_dir / "executor.json", "w") as f:
+            json.dump(executor, f, indent=4)

@@ -409,5 +409,39 @@
         "is_active": true,
         "role": "User",
         "id": 24
+    },
+    {
+        "first_name": "Steven",
+        "last_name": "Marquez",
+        "email": "bruce95@example.net",
+        "age": 21,
+        "phone": "484-714-4312x1721",
+        "gender": "Male",
+        "address": {
+            "street": "433 Ponce Turnpike",
+            "city": "West Robert",
+            "state": "Alabama",
+            "zip_code": "27844"
+        },
+        "is_active": true,
+        "role": "Manager",
+        "id": 25
+    },
+    {
+        "first_name": "Ronald",
+        "last_name": "Bailey",
+        "email": "elizabeththomas@example.org",
+        "age": 18,
+        "phone": "(760)549-0413",
+        "gender": "Male",
+        "address": {
+            "street": "929 Annette Walk",
+            "city": "New Andrew",
+            "state": "Nevada",
+            "zip_code": "34711"
+        },
+        "is_active": true,
+        "role": "Manager",
+        "id": 26
     }
 ]

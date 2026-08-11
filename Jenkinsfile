@@ -143,6 +143,31 @@ pipeline {
             }
 
         }
+        stage('Verify Allure Results') {
+
+            steps {
+
+                sh '''
+                    echo "===== Workspace ====="
+
+                    pwd
+
+                    echo ""
+
+                    echo "===== Allure Results ====="
+
+                    ls -la allure-results
+
+                     echo ""
+
+                    echo "===== executor.json ====="
+
+                    cat allure-results/executor.json || true
+                '''
+
+            }
+
+        }
 
     }
 
