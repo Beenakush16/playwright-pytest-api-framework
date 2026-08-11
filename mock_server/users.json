@@ -477,5 +477,22 @@
         "is_active": true,
         "role": "Admin",
         "id": 28
+    },
+    {
+        "first_name": "Sarah",
+        "last_name": "Clark",
+        "email": "johnlee@example.org",
+        "age": 24,
+        "phone": "(359)260-8166x3633",
+        "gender": "Female",
+        "address": {
+            "street": "5856 Christopher Summit",
+            "city": "Jennifermouth",
+            "state": "Texas",
+            "zip_code": "83576"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 29
     }
 ]
