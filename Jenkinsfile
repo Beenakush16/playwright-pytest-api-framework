@@ -28,7 +28,7 @@ pipeline {
 
     environment {
 
-        PYTHON = "python3"
+        PYTHON = "/opt/homebrew/bin/python3.13"
 
         VENV = "venv"
 
@@ -51,21 +51,27 @@ pipeline {
             steps {
 
                 sh '''
-                    echo "Workspace:"
+                    echo "===== Workspace ====="
 
                     pwd
 
                     echo ""
 
-                    echo "Repository Files:"
+                    echo "===== Repository ====="
 
                     ls -la
 
                     echo ""
 
-                    python3 --version
+                    echo "===== Python ====="
 
-                    pip3 --version
+                    ${PYTHON} --version
+
+                    ${PYTHON} -c "import sys; print(sys.executable)"
+
+                    echo ""
+
+                    echo "===== Git ====="
 
                     git --version
                 '''
@@ -91,11 +97,10 @@ pipeline {
             steps {
 
                 sh '''
-                    . ${VENV}/bin/activate
 
-                    python -m pip install --upgrade pip
+                    ${VENV}/bin/python -m pip install --upgrade pip
 
-                    pip install -r requirements.txt
+                    ${VENV}/bin/python -m pip install -r requirements.txt
                 '''
 
             }
@@ -107,8 +112,6 @@ pipeline {
             steps {
 
                 sh '''
-                    . ${VENV}/bin/activate
-
                     nohup python mock_server/app.py > mock_server.log 2>&1 &
 
                     sleep 5
@@ -123,9 +126,8 @@ pipeline {
             steps {
 
                 sh """
-                    . ${VENV}/bin/activate
-
-                    pytest tests/ \
+                    ${VENV}/bin/pytest \
+                        tests/ \
                         --env=${params.ENV} \
                         --alluredir=${ALLURE_RESULTS}
                 """
