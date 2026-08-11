@@ -1,0 +1,7 @@
+MOCK_SERVER_PORT = 5000
+HEALTH_ENDPOINT = "/health"
+
+HEALTH_URL = (
+    f"http://127.0.0.1:{MOCK_SERVER_PORT}"
+    f"{HEALTH_ENDPOINT}"
+)

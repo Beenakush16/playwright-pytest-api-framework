@@ -90,6 +90,12 @@ def delete_user(user_id):
 
     return jsonify({"message": "User not found"}), 404
 
+@app.get("/health")
+def health():
+    return {
+        "status": "UP"
+    }, 200
+
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000, debug=True)

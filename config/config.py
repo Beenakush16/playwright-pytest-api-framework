@@ -32,4 +32,16 @@ class Config:
     def retry(self):
         return self.data.get("retry", {})
 
-    
+    @property
+    def mock_server_host(self):
+        return self.data["mock_server"]["host"]
+
+
+    @property
+    def mock_server_port(self):
+        return self.data["mock_server"]["port"]
+
+
+    @property
+    def mock_server_health_endpoint(self):
+        return self.data["mock_server"]["health_endpoint"]
