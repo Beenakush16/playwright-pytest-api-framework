@@ -494,5 +494,22 @@
         "is_active": true,
         "role": "User",
         "id": 29
+    },
+    {
+        "first_name": "Bradley",
+        "last_name": "Bowman",
+        "email": "tammy63@example.net",
+        "age": 27,
+        "phone": "001-960-208-4334",
+        "gender": "Female",
+        "address": {
+            "street": "244 Erin Plains",
+            "city": "West Edwardland",
+            "state": "California",
+            "zip_code": "88098"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 30
     }
 ]

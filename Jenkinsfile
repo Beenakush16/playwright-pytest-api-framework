@@ -196,10 +196,7 @@ pipeline {
                 echo "===== Executor Before Generate ====="
                 cat allure-results/executor.json
 
-                /Users/beenakushaha/.jenkins/tools/org.allurereport.jenkins.tools.AllureCommandlineInstallation/Allure/bin/allure \
-                    generate allure-results \
-                    --clean \
-                    -o temp-allure-report
+                allure generate allure-results --clean -o temp-allure-report
 
                 echo ""
                 echo "===== Generated executors.json ====="
