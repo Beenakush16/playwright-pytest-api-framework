@@ -1,0 +1,379 @@
+[
+    {
+        "id": 1,
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@test.com",
+        "age": 28,
+        "phone": "+1-555-0101",
+        "gender": "Male",
+        "address": {
+            "street": "123 Main Street",
+            "city": "New York",
+            "state": "NY",
+            "country": "USA",
+            "zip_code": "10001"
+        },
+        "is_active": true,
+        "role": "Admin"
+    },
+    {
+        "id": 2,
+        "first_name": "Alice",
+        "last_name": "Smith",
+        "email": "alice.smith@test.com",
+        "age": 32,
+        "phone": "+1-555-0102",
+        "gender": "Female",
+        "address": {
+            "street": "456 Park Avenue",
+            "city": "Chicago",
+            "state": "IL",
+            "country": "USA",
+            "zip_code": "60601"
+        },
+        "is_active": true,
+        "role": "User"
+    },
+    {
+        "id": 3,
+        "first_name": "Michael",
+        "last_name": "Brown",
+        "email": "michael.brown@test.com",
+        "age": 40,
+        "phone": "+1-555-0103",
+        "gender": "Male",
+        "address": {
+            "street": "789 Sunset Blvd",
+            "city": "Los Angeles",
+            "state": "CA",
+            "country": "USA",
+            "zip_code": "90001"
+        },
+        "is_active": false,
+        "role": "Manager"
+    },
+    {
+        "id": 4,
+        "first_name": "Nancy",
+        "last_name": "Bell",
+        "email": "michael99@example.org",
+        "age": 54,
+        "phone": "001-756-422-4213x210",
+        "gender": "Female",
+        "address": {
+            "street": "4819 Brian Gateway Suite 182",
+            "city": "Mejiamouth",
+            "state": "Florida",
+            "zip_code": "14630"
+        },
+        "is_active": true,
+        "role": "User"
+    },
+    {
+        "first_name": "Carl",
+        "last_name": "Edwards",
+        "email": "qparks@example.com",
+        "age": 46,
+        "phone": "9314811811",
+        "gender": "Female",
+        "address": {
+            "street": "1385 Wagner Camp",
+            "city": "Rebeccachester",
+            "state": "Oklahoma",
+            "zip_code": "89638"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 5
+    },
+    {
+        "first_name": "Kimberly",
+        "last_name": "Campbell",
+        "email": "andreamartinez@example.org",
+        "age": 63,
+        "phone": "(469)779-7243x1290",
+        "gender": "Male",
+        "address": {
+            "street": "918 Michael View",
+            "city": "East Jesse",
+            "state": "Tennessee",
+            "zip_code": "64529"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 6
+    },
+    {
+        "first_name": "Teresa",
+        "last_name": "Wallace",
+        "email": "elizabethstone@example.com",
+        "age": 44,
+        "phone": "(295)780-5890",
+        "gender": "Female",
+        "address": {
+            "street": "4021 Christopher Glen Suite 690",
+            "city": "Gonzalezton",
+            "state": "Hawaii",
+            "zip_code": "86580"
+        },
+        "is_active": true,
+        "role": "Manager",
+        "id": 7
+    },
+    {
+        "first_name": "Ashley",
+        "last_name": "Blanchard",
+        "email": "sabrina61@example.net",
+        "age": 57,
+        "phone": "001-562-989-5892x53269",
+        "gender": "Female",
+        "address": {
+            "street": "3327 Mcintosh Neck",
+            "city": "Feliciaville",
+            "state": "Oklahoma",
+            "zip_code": "40443"
+        },
+        "is_active": true,
+        "role": "Manager",
+        "id": 8
+    },
+    {
+        "first_name": "Victoria",
+        "last_name": "Conway",
+        "email": "aflores@example.net",
+        "age": 19,
+        "phone": "(507)497-6144x23927",
+        "gender": "Male",
+        "address": {
+            "street": "8523 Adams Gardens Apt. 979",
+            "city": "Arellanoborough",
+            "state": "Indiana",
+            "zip_code": "24050"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 9
+    },
+    {
+        "first_name": "Michael",
+        "last_name": "Murphy",
+        "email": "williamsalexander@example.org",
+        "age": 18,
+        "phone": "+1-934-337-7180x0478",
+        "gender": "Male",
+        "address": {
+            "street": "00422 Austin Springs Suite 985",
+            "city": "Harperhaven",
+            "state": "Minnesota",
+            "zip_code": "60189"
+        },
+        "is_active": true,
+        "role": "Manager",
+        "id": 10
+    },
+    {
+        "first_name": "Joseph",
+        "last_name": "Carpenter",
+        "email": "carsonwilliam@example.com",
+        "age": 47,
+        "phone": "889-271-1122",
+        "gender": "Female",
+        "address": {
+            "street": "496 Rowland Corners",
+            "city": "West William",
+            "state": "Louisiana",
+            "zip_code": "79255"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 11
+    },
+    {
+        "first_name": "Shawn",
+        "last_name": "Edwards",
+        "email": "blopez@example.com",
+        "age": 62,
+        "phone": "+1-444-380-7130x03357",
+        "gender": "Male",
+        "address": {
+            "street": "7567 Wang Shores",
+            "city": "Carolinefort",
+            "state": "Wisconsin",
+            "zip_code": "56375"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 12
+    },
+    {
+        "first_name": "Jeremiah",
+        "last_name": "Gordon",
+        "email": "hbailey@example.net",
+        "age": 42,
+        "phone": "001-370-904-2095x601",
+        "gender": "Male",
+        "address": {
+            "street": "2046 George Estates",
+            "city": "South Jennifertown",
+            "state": "Pennsylvania",
+            "zip_code": "12598"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 13
+    },
+    {
+        "first_name": "Roberta",
+        "last_name": "Williams",
+        "email": "williamwilkerson@example.org",
+        "age": 62,
+        "phone": "266.554.0093",
+        "gender": "Female",
+        "address": {
+            "street": "611 Robin Mews Apt. 879",
+            "city": "West Kathyville",
+            "state": "West Virginia",
+            "zip_code": "24127"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 14
+    },
+    {
+        "first_name": "Sarah",
+        "last_name": "Hull",
+        "email": "catherine79@example.com",
+        "age": 54,
+        "phone": "+1-670-422-9079x664",
+        "gender": "Female",
+        "address": {
+            "street": "5470 Moore Fall Apt. 282",
+            "city": "West Kennethberg",
+            "state": "Tennessee",
+            "zip_code": "02334"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 15
+    },
+    {
+        "first_name": "Russell",
+        "last_name": "Smith",
+        "email": "april76@example.org",
+        "age": 60,
+        "phone": "275.413.5311",
+        "gender": "Female",
+        "address": {
+            "street": "78946 Kelsey Mill Suite 361",
+            "city": "Benjaminside",
+            "state": "Texas",
+            "zip_code": "09036"
+        },
+        "is_active": true,
+        "role": "Manager",
+        "id": 16
+    },
+    {
+        "first_name": "Michael",
+        "last_name": "Mendez",
+        "email": "katherinegriffin@example.net",
+        "age": 21,
+        "phone": "575-319-4218x117",
+        "gender": "Female",
+        "address": {
+            "street": "45198 Jennifer Turnpike",
+            "city": "New Ambertown",
+            "state": "Colorado",
+            "zip_code": "46396"
+        },
+        "is_active": true,
+        "role": "Manager",
+        "id": 17
+    },
+    {
+        "first_name": "Heather",
+        "last_name": "Gibson",
+        "email": "dustin44@example.org",
+        "age": 59,
+        "phone": "719-657-0326x24377",
+        "gender": "Male",
+        "address": {
+            "street": "52273 Thomas Highway Suite 549",
+            "city": "Vincentfort",
+            "state": "New Hampshire",
+            "zip_code": "08648"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 18
+    },
+    {
+        "first_name": "Jessica",
+        "last_name": "Wong",
+        "email": "jhooper@example.net",
+        "age": 46,
+        "phone": "001-940-362-8242x761",
+        "gender": "Female",
+        "address": {
+            "street": "198 Payne Ridge Apt. 605",
+            "city": "South Marilyn",
+            "state": "New Mexico",
+            "zip_code": "55329"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 19
+    },
+    {
+        "first_name": "Angela",
+        "last_name": "Ellis",
+        "email": "david37@example.com",
+        "age": 37,
+        "phone": "001-276-350-5455",
+        "gender": "Female",
+        "address": {
+            "street": "10549 Williams Estates",
+            "city": "North Edward",
+            "state": "Maryland",
+            "zip_code": "16108"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 20
+    },
+    {
+        "first_name": "Christina",
+        "last_name": "Morrison",
+        "email": "nathanielcalhoun@example.net",
+        "age": 18,
+        "phone": "964.931.7664x796",
+        "gender": "Female",
+        "address": {
+            "street": "24752 Adam Route Apt. 510",
+            "city": "Brendashire",
+            "state": "Alaska",
+            "zip_code": "86591"
+        },
+        "is_active": true,
+        "role": "Manager",
+        "id": 21
+    },
+    {
+        "first_name": "Rita",
+        "last_name": "Hawkins",
+        "email": "ngay@example.net",
+        "age": 64,
+        "phone": "(716)978-4188",
+        "gender": "Female",
+        "address": {
+            "street": "6971 Meagan Village",
+            "city": "Port Johnchester",
+            "state": "Wyoming",
+            "zip_code": "03569"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 22
+    }
+]

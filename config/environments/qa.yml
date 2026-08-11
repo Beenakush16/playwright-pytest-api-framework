@@ -1,0 +1,22 @@
+base_url: http://127.0.0.1:5000/
+
+timeout: 30000
+
+verify_ssl: false
+
+headers:
+  x-api-key: reqres_8b7a938416ac42d0b6141e0a3cb8b348
+  Content-Type: application/json
+  Accept: application/json
+
+auth:
+  username: qa_user
+  password: secret123
+
+retry:
+  enable: true
+  max_attempts: 3
+  delay: 2
+
+logging:
+  level: INFO
