@@ -545,5 +545,22 @@
         "is_active": true,
         "role": "Admin",
         "id": 32
+    },
+    {
+        "first_name": "Cody",
+        "last_name": "Woods",
+        "email": "allensarah@example.org",
+        "age": 43,
+        "phone": "+1-389-442-5203x94850",
+        "gender": "Male",
+        "address": {
+            "street": "536 Mitchell Rue",
+            "city": "Christineshire",
+            "state": "Hawaii",
+            "zip_code": "29615"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 33
     }
 ]

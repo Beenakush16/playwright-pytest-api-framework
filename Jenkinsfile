@@ -203,7 +203,8 @@ pipeline {
 
             junit(
                 testResults: 'test-results/junit.xml',
-                allowEmptyResults: true
+                allowEmptyResults: true,
+                keepLongStdio: true
             )
 
             archiveArtifacts(
