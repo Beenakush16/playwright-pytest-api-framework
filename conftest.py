@@ -7,6 +7,7 @@ from client.request_logger import RequestLogger
 import subprocess
 from config.logger import logger
 from reporting.allure_environment import AllureEnvironment
+from reporting.allure_executor import AllureExecutor
 
 def pytest_addoption(parser):
     parser.addoption(
@@ -74,7 +75,7 @@ def pytest_sessionstart(session):
         environment=env,
         base_url=config.base_url
     )
-    #AllureExecutor.write()
+    AllureExecutor.write()
 
 def pytest_sessionfinish(session, exitstatus):
 

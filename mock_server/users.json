@@ -375,5 +375,39 @@
         "is_active": true,
         "role": "Admin",
         "id": 22
+    },
+    {
+        "first_name": "Brian",
+        "last_name": "Garcia",
+        "email": "nicholas24@example.org",
+        "age": 57,
+        "phone": "+1-339-637-8833",
+        "gender": "Male",
+        "address": {
+            "street": "7628 Bell Green",
+            "city": "South Thomasview",
+            "state": "Colorado",
+            "zip_code": "75134"
+        },
+        "is_active": true,
+        "role": "Manager",
+        "id": 23
+    },
+    {
+        "first_name": "Timothy",
+        "last_name": "Thompson",
+        "email": "dawn98@example.net",
+        "age": 57,
+        "phone": "+1-436-734-4254x3248",
+        "gender": "Female",
+        "address": {
+            "street": "256 Heather Hills Apt. 234",
+            "city": "Jessicabury",
+            "state": "Rhode Island",
+            "zip_code": "38401"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 24
     }
 ]
