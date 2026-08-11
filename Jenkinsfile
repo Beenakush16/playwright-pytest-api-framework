@@ -138,6 +138,7 @@ pipeline {
                         tests/ \
                         --env=${params.ENV} \
                         --alluredir=${ALLURE_RESULTS}
+                        --junitxml=test-results/junit.xml
                 """
 
             }
@@ -192,23 +193,17 @@ pipeline {
     post {
 
         always {
-            sh '''
-                echo "===== Executor Before Generate ====="
-                cat allure-results/executor.json
-
-                allure generate allure-results --clean -o temp-allure-report
-
-                echo ""
-                echo "===== Generated executors.json ====="
-
-                cat temp-allure-report/widgets/executors.json
-            '''
 
             allure(
                 includeProperties: false,
                 jdk: '',
                 results: [[path: 'allure-results']],
                 commandline: 'Allure'
+            )
+
+            junit(
+                testResults: 'test-results/junit.xml',
+                allowEmptyResults: true
             )
 
             archiveArtifacts(

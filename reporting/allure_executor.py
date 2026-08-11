@@ -13,11 +13,12 @@ class AllureExecutor:
 
         executor = {
             "reportName": "Playwright API Automation Report",
+            "reportUrl": os.getenv("BUILD_URL", "") + "allure",
             "name": "Jenkins",
             "type": "jenkins",
             "url": os.getenv("JENKINS_URL", ""),
             "buildOrder": int(os.getenv("BUILD_NUMBER", "0")),
-            "buildName": os.getenv("JOB_NAME", ""),
+            "buildName": f"{os.getenv('JOB_NAME', '')} #{os.getenv('BUILD_NUMBER', '')}",
             "buildUrl": os.getenv("BUILD_URL", "")
         }
 

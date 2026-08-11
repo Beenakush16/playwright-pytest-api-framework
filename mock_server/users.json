@@ -511,5 +511,22 @@
         "is_active": true,
         "role": "User",
         "id": 30
+    },
+    {
+        "first_name": "Kimberly",
+        "last_name": "Anderson",
+        "email": "dcase@example.net",
+        "age": 37,
+        "phone": "001-476-518-9483x8731",
+        "gender": "Female",
+        "address": {
+            "street": "3590 Caleb View Suite 174",
+            "city": "Port Jessica",
+            "state": "New Hampshire",
+            "zip_code": "98357"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 31
     }
 ]
