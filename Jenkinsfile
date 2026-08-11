@@ -85,7 +85,15 @@ pipeline {
             steps {
 
                 sh '''
+                    rm -rf ${VENV}
+
                     ${PYTHON} -m venv ${VENV}
+
+                    ${VENV}/bin/python --version
+
+                    ${VENV}/bin/python -c "import sys; print(sys.executable)"
+
+                    ${VENV}/bin/python -c "import sys; print(sys.version)"
                 '''
 
             }
