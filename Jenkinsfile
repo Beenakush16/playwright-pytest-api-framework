@@ -168,6 +168,24 @@ pipeline {
             }
 
         }
+        stage('Debug Allure') {
+            steps {
+                sh '''
+                    echo "===== Current Workspace ====="
+                    pwd
+
+                    echo ""
+
+                    echo "===== allure-results ====="
+                    ls -la allure-results
+
+                    echo ""
+
+                    echo "===== executor.json ====="
+                    cat allure-results/executor.json
+                    '''
+            }
+        }
 
     }
 

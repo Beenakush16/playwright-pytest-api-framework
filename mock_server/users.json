@@ -443,5 +443,39 @@
         "is_active": true,
         "role": "Manager",
         "id": 26
+    },
+    {
+        "first_name": "Zachary",
+        "last_name": "Gentry",
+        "email": "ryan71@example.org",
+        "age": 48,
+        "phone": "923.536.0840",
+        "gender": "Female",
+        "address": {
+            "street": "955 Sarah Stravenue",
+            "city": "Herrington",
+            "state": "West Virginia",
+            "zip_code": "08758"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 27
+    },
+    {
+        "first_name": "Nancy",
+        "last_name": "Singleton",
+        "email": "denise11@example.com",
+        "age": 33,
+        "phone": "(872)377-7281x3399",
+        "gender": "Male",
+        "address": {
+            "street": "6453 Walker Trail Apt. 579",
+            "city": "Holtfurt",
+            "state": "Arizona",
+            "zip_code": "12260"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 28
     }
 ]
