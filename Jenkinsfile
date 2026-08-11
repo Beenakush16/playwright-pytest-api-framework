@@ -137,7 +137,7 @@ pipeline {
                     ${VENV}/bin/pytest \
                         tests/ \
                         --env=${params.ENV} \
-                        --alluredir=${ALLURE_RESULTS}
+                        --alluredir=${ALLURE_RESULTS} \
                         --junitxml=test-results/junit.xml
                 """
 

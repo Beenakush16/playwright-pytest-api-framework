@@ -528,5 +528,22 @@
         "is_active": true,
         "role": "Admin",
         "id": 31
+    },
+    {
+        "first_name": "Tyler",
+        "last_name": "Boone",
+        "email": "nicholsjared@example.net",
+        "age": 22,
+        "phone": "001-559-448-5666x716",
+        "gender": "Female",
+        "address": {
+            "street": "078 Perez Ports",
+            "city": "South Wanda",
+            "state": "North Carolina",
+            "zip_code": "64357"
+        },
+        "is_active": true,
+        "role": "Admin",
+        "id": 32
     }
 ]
