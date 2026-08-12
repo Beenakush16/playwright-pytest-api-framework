@@ -14,10 +14,15 @@ pipeline {
 
     parameters {
 
-        string(
-        name: 'BRANCH',
-        defaultValue: 'main',
-        description: 'Git branch to checkout'
+        gitParameter(
+            name: 'BRANCH',
+            type: 'PT_BRANCH',
+            defaultValue: 'main',
+            branchFilter: 'origin/(.*)',
+            sortMode: 'DESCENDING_SMART',
+            selectedValue: 'DEFAULT',
+            quickFilterEnabled: true,
+            description: 'Select Git branch'
         )
 
         choice(
@@ -47,8 +52,18 @@ pipeline {
         stage('Checkout Source') {
 
             steps {
-                checkout scm
-            }
+                checkout([
+                    $class: 'GitSCM',
+
+                    branches: [[
+                        name: "*/${params.BRANCH}"
+                    ]],
+
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/Beenakush16/playwright-pytest-api-framework.git'
+                    ]]
+                ])
+        }
 
         }
 

@@ -562,5 +562,22 @@
         "is_active": true,
         "role": "Admin",
         "id": 33
+    },
+    {
+        "first_name": "David",
+        "last_name": "Vasquez",
+        "email": "qstanley@example.com",
+        "age": 18,
+        "phone": "+1-325-445-5337x94547",
+        "gender": "Female",
+        "address": {
+            "street": "5289 Robert Isle",
+            "city": "Lake Stephanieborough",
+            "state": "Indiana",
+            "zip_code": "37955"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 34
     }
 ]
