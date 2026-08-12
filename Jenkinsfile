@@ -14,6 +14,12 @@ pipeline {
 
     parameters {
 
+        string(
+        name: 'BRANCH',
+        defaultValue: 'main',
+        description: 'Git branch to checkout'
+        )
+
         choice(
             name: 'ENV',
             choices: [
