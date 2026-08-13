@@ -2,10 +2,10 @@ from pydantic import BaseModel, Field, EmailStr
 from typing import Literal
 
 class AddressSchema(BaseModel):
-    street: str = Field(..., example="123 Main St")
-    city: str = Field(..., example="Anytown")
-    state: str = Field(..., example="CA")
-    zip_code: str = Field(..., example="12345")
+    street: str = Field(..., json_schema_extra={"example": "123 Main St"})
+    city: str = Field(..., json_schema_extra={"example": "Anytown"})
+    state: str = Field(..., json_schema_extra={"example": "CA"})
+    zip_code: str = Field(..., json_schema_extra={"example": "12345"})
 
 class CreateUserRequestSchema(BaseModel):
 
