@@ -1,0 +1,5 @@
+[project]
+name = "playwright-pytest-api-framework"
+version = "1.2.0"
+description = "Enterprise API Automation Framework using Playwright and Pytest"
+requires-python = ">=3.13"

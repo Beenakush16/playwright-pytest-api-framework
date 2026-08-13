@@ -25,3 +25,33 @@ mock_server:
   host: "127.0.0.1"
   port: 5000
   health_endpoint: "/health"
+
+rate_limit:
+
+  enabled: true
+
+  default:
+
+    max_requests: 5
+
+    window_seconds: 15
+
+  endpoints:
+
+    GET /users:
+
+      max_requests: 5
+
+      window_seconds: 30
+
+    GET /users/<id>:
+
+      max_requests: 5
+
+      window_seconds: 40
+
+    POST /users:
+
+      max_requests: 3
+
+      window_seconds: 40

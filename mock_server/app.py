@@ -1,6 +1,10 @@
 from flask import Flask, jsonify, request
 import json
 from pathlib import Path
+from rate_limiter import RateLimiter
+
+import yaml
+
 
 app = Flask(__name__)
 
@@ -16,6 +20,50 @@ def save_users(users):
     with open(USERS_FILE, "w") as file:
         json.dump(users, file, indent=4)
 
+# ----------------------------------------------------
+# Load Configuration
+# ----------------------------------------------------
+
+config_path = (
+    Path(__file__).parent.parent
+    / "config"
+    / "environments"
+    / "qa.yml"
+)
+
+with open(config_path, "r") as file:
+    config = yaml.safe_load(file)
+
+rate_limit_config = config["rate_limit"]
+
+rate_limiter = RateLimiter(rate_limit_config)
+
+# ----------------------------------------------------
+# Middleware
+# ----------------------------------------------------
+
+@app.before_request
+def validate_rate_limit():
+
+    allowed, retry_after = rate_limiter.allow_request(
+        request.method,
+        request.path
+    )
+
+    if allowed:
+        return
+
+    response = jsonify(
+        {
+            "message": "Rate limit exceeded."
+        }
+    )
+
+    response.status_code = 429
+
+    response.headers["Retry-After"] = str(retry_after)
+
+    return response
 
 @app.get("/users")
 def get_users():
@@ -89,6 +137,17 @@ def delete_user(user_id):
             )
 
     return jsonify({"message": "User not found"}), 404
+
+@app.post("/test/reset-rate-limit")
+def reset():
+
+    rate_limiter.clear()
+
+    return jsonify({
+
+        "message": "Rate limit reset"
+
+    }), 200
 
 @app.get("/health")
 def health():

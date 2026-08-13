@@ -115,3 +115,11 @@ def pytest_sessionfinish(session, exitstatus):
             "Failed to generate/open Allure report: {}",
             ex
         )
+
+@pytest.fixture(autouse=True)
+
+def reset_rate_limit(api_client):
+
+    api_client.post("/test/reset-rate-limit")
+
+    yield

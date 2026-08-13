@@ -2,7 +2,7 @@ from pathlib import Path
 from importlib.metadata import version, PackageNotFoundError
 import platform
 
-from config.version import FRAMEWORK_VERSION
+from config.framework_info import FrameworkInfo
 
 
 class AllureEnvironment:
@@ -10,12 +10,11 @@ class AllureEnvironment:
     @staticmethod
     def _get_package_version(package_name: str) -> str:
         """
-        Returns installed package version.
-        Returns 'Unknown' if package is not installed.
+        Returns the installed package version.
+        Returns 'Unknown' if the package is not installed.
         """
         try:
             return version(package_name)
-
         except PackageNotFoundError:
             return "Unknown"
 
@@ -24,12 +23,21 @@ class AllureEnvironment:
         cls,
         environment: str,
         base_url: str
-    ):
+    ) -> None:
 
         results_dir = Path("allure-results")
-        results_dir.mkdir(exist_ok=True)
+        results_dir.mkdir(parents=True, exist_ok=True)
 
+        # Framework metadata
+        framework_name = FrameworkInfo.name()
+        framework_version = FrameworkInfo.version()
+
+        # Environment properties
         properties = {
+
+            "Framework": framework_name,
+
+            "Framework Version": framework_version,
 
             "Environment": environment,
 
@@ -50,19 +58,17 @@ class AllureEnvironment:
                 cls._get_package_version("pydantic"),
 
             "Faker":
-                cls._get_package_version("faker"),
-
-            "Framework Version":
-                FRAMEWORK_VERSION
+                cls._get_package_version("faker")
         }
 
         environment_file = results_dir / "environment.properties"
 
-        with open(
-            environment_file,
-            "w",
-            encoding="utf-8"
-        ) as file:
+        content = "\n".join(
+            f"{key}={value}"
+            for key, value in properties.items()
+        )
 
-            for key, value in properties.items():
-                file.write(f"{key}={value}\n")
+        environment_file.write_text(
+            content,
+            encoding="utf-8"
+        )

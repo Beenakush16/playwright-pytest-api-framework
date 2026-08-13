@@ -45,3 +45,7 @@ class Config:
     @property
     def mock_server_health_endpoint(self):
         return self.data["mock_server"]["health_endpoint"]
+
+    @property
+    def rate_limit(self):
+        return self.data.get("rate_limit", {})
