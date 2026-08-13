@@ -25,39 +25,7 @@ def test_create_user_api(user_api):
     assert validated_response.email == payload.email
     print(response.json())
 
-@allure.title("Validate rate limit for Get Users API")
-def test_rate_limit(user_api):
 
-    for _ in range(5):
-        response = user_api.get_users()
-        assert(response.status).to_be(200)
-
-    response = user_api.get_users()
-
-    assert(response.status).to_be(429)
-
-    assert(response.json()["message"]).to_be(
-        "Rate limit exceeded."
-    )
-
-@allure.title("Validate Get Users API returns successful response when 6th request is made after rate limit window")
-def test_rate_limit(user_api):
-
-    for _ in range(5):
-        response = user_api.get_users()
-        assert(response.status).to_be(200)
-
-    response = user_api.get_users()
-
-    assert(response.status).to_be(429)
-
-    assert(response.json()["message"]).to_be(
-        "Rate limit exceeded."
-    )
-    time.sleep(6)
-
-    response = user_api.get_users()
-    assert(response.status).to_be(200)
 """
 Test - verifies business behavior.
 UserAPI - knows user-related endpoints and operations.

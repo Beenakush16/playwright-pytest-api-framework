@@ -16,5 +16,22 @@
         },
         "is_active": true,
         "role": "Admin"
+    },
+    {
+        "first_name": "Kristin",
+        "last_name": "Ochoa",
+        "email": "wchen@example.net",
+        "age": 44,
+        "phone": "(356)959-4961x308",
+        "gender": "Male",
+        "address": {
+            "street": "5055 Seth Freeway",
+            "city": "Kyleview",
+            "state": "Maine",
+            "zip_code": "31367"
+        },
+        "is_active": true,
+        "role": "User",
+        "id": 2
     }
 ]

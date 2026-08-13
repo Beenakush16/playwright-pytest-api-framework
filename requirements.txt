@@ -16,3 +16,4 @@ faker
 requests
 email-validator
 pytest-playwright
+pytest-xdist

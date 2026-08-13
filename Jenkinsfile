@@ -35,6 +35,18 @@ pipeline {
             description: 'Select execution environment'
         )
 
+        choice(
+        name: 'WORKERS',
+        choices: [
+            'Auto',
+            '1',
+            '2',
+            '4',
+            '8'
+        ],
+        description: 'Number of parallel pytest workers'
+        )
+
     }
 
     environment {
@@ -44,6 +56,8 @@ pipeline {
         VENV = "venv"
 
         ALLURE_RESULTS = "allure-results"
+
+        WORKERS = ""
 
     }
 
@@ -55,15 +69,13 @@ pipeline {
                 checkout([
                     $class: 'GitSCM',
 
-                    branches: [[
-                        name: "*/${params.BRANCH}"
-                    ]],
+                    branches: [[name: params.BRANCH]],
 
                     userRemoteConfigs: [[
                         url: 'https://github.com/Beenakush16/playwright-pytest-api-framework.git'
                     ]]
                 ])
-        }
+            }
 
         }
 
@@ -141,7 +153,7 @@ pipeline {
             steps {
 
                 sh '''
-                    nohup python mock_server/app.py > mock_server.log 2>&1 &
+                    nohup ${VENV}/bin/python mock_server/app.py > mock_server.log 2>&1 &
 
                     sleep 5
                 '''
@@ -150,17 +162,69 @@ pipeline {
 
         }
 
-        stage('Run API Tests') {
+        stage('Determine Parallel Workers') {
 
             steps {
 
-                sh """
-                    ${VENV}/bin/pytest \
-                        tests/ \
-                        --env=${params.ENV} \
-                        --alluredir=${ALLURE_RESULTS} \
-                        --junitxml=test-results/junit.xml
-                """
+                script {
+
+                    env.WORKERS = params.WORKERS == "Auto" ? "auto" : params.WORKERS
+
+                    if (env.WORKERS == "auto") {
+
+                        echo "Running tests using all available CPU cores."
+
+                    } else {
+
+                        echo "Running tests with ${env.WORKERS} worker(s)."
+                        
+                    }
+                    
+                }
+            }
+        }
+
+        stage('Execution Summary') {
+
+            steps {
+
+                script {
+
+                    echo """
+                    ========================================
+                    Execution Configuration
+                    ========================================
+                    currentBuild.displayName =
+                        "#${env.BUILD_NUMBER} | ${params.BRANCH} | ${params.ENV}"
+                    Branch      : ${params.BRANCH}
+                    Environment : ${params.ENV}
+                    Workers     : ${env.WORKERS}
+                    ========================================
+                    """
+
+                }
+
+            }
+
+        }
+        
+
+        stage('Run API Tests') {
+
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+
+                    sh """
+                        mkdir -p test-results
+                        ${VENV}/bin/pytest \
+                            tests/ \
+                            --env=${params.ENV} \
+                            -n ${env.WORKERS} \
+                            --dist=loadscope \
+                            --alluredir=${ALLURE_RESULTS} \
+                            --junitxml=test-results/junit.xml
+                    """
+                }
 
             }
 
@@ -190,25 +254,7 @@ pipeline {
             }
 
         }
-        stage('Debug Allure') {
-            steps {
-                sh '''
-                    echo "===== Current Workspace ====="
-                    pwd
-
-                    echo ""
-
-                    echo "===== allure-results ====="
-                    ls -la allure-results
-
-                    echo ""
-
-                    echo "===== executor.json ====="
-                    cat allure-results/executor.json
-                    '''
-            }
-        }
-
+    
     }
 
     post {

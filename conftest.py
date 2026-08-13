@@ -123,3 +123,10 @@ def reset_rate_limit(api_client):
     api_client.post("/test/reset-rate-limit")
 
     yield
+
+@pytest.fixture(autouse=True)
+def skip_disabled_features(request, config):
+
+    if "rate_limit" in request.keywords:
+        if not config.is_rate_limit_enabled():
+            pytest.skip("Rate limiting disabled.")
